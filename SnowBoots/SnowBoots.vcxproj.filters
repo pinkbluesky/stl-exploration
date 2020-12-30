@@ -15,13 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Advent9.cpp">
+    <ClCompile Include="SnowBoots.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="1.in" />
-    <None Include="a9.in" />
-    <None Include="a9.out" />
   </ItemGroup>
 </Project>

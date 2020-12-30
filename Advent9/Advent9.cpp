@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <unordered_set>
+#include <time.h>
 
 // https://adventofcode.com/2020/day/9
 
@@ -72,6 +73,8 @@ std::pair<int, int> find_range_of_sum(int val, int n)
 
 int main()
 {
+	clock_t tStart = clock();
+
 	int i = 0;
 	while (i < MAXN && !fin.eof())
 	{
@@ -80,6 +83,8 @@ int main()
 	}
 
 	int part1 = find_non_sum(i);
+
+	fout << "Time taken: " << (double)(clock() - tStart) / CLOCKS_PER_SEC << std::endl;
 
 	if (part1)
 	{
@@ -94,85 +99,5 @@ int main()
 
 	fout << part2.first + part2.second << std::endl;
 
-	/*
-	int result = 0;
-
-	int i = 0;
-	while (i < MAXN && !fin.eof())
-	{
-		fin >> arr[i];
-		// only when we've passed the preamble
-		if (i >= N)
-		{
-			// check if number is NOT a sum
-			if (sums.find(arr[i]) == sums.end())
-			{
-				result = arr[i];
-				break;
-			}
-		}
-
-		// fill the sums map
-		for (int j = i - N; j < i; j++)
-		{
-			// (except for numbers that are the same)
-			if (arr[i] != arr[j])
-			{
-				sums.insert(arr[i] + arr[j]);
-			}
-		}
-
-		sums.erase(sums.begin(), sums.begin() + N);
-
-		i++;
-	}
-
-
-	if (!result)
-	{
-		fout << "nothing" << std::endl;
-		return 0;
-	}
-		
-
-	fout << arr[i] << std::endl;
-	*/
-
-	/*
-	// sums for each sequence
-	std::vector<int> seq_sums;
-
-	int min = INFINITY, max = -INFINITY;
-
-	// find sequences
-	// for each value
-	for (int j = 0; j < i; i++)
-	{
-		// for all previous sequences, add the value
-		for (auto &s_val : seq_sums)
-		{
-			s_val += arr[j];
-		}
-	
-		// add a new sequence
-		seq_sums.push_back(arr[j]);
-
-		// search for the desired value
-		auto it = std::find(seq_sums.begin(), seq_sums.end(), result);
-		if (it != seq_sums.end())
-		{
-			// find min and max
-			for (int a = (it - seq_sums.begin()); a < j; a++)
-			{
-				min = std::min(min, arr[a]);
-				max = std::max(max, arr[a]);
-			}
-
-			break;
-		}
-	}
-
-	fout << min << std::endl << max << std::endl;
-	*/
 	return 0;
 }
