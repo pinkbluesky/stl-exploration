@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnowBoots", "SnowBoots\Snow
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Advent9_Faster", "Advent9_Faster\Advent9_Faster.vcxproj", "{1064EFC6-49F2-485B-B11C-B69636ADE1CE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Skyline", "Skyline\Skyline.vcxproj", "{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{1064EFC6-49F2-485B-B11C-B69636ADE1CE}.Release|x64.Build.0 = Release|x64
 		{1064EFC6-49F2-485B-B11C-B69636ADE1CE}.Release|x86.ActiveCfg = Release|Win32
 		{1064EFC6-49F2-485B-B11C-B69636ADE1CE}.Release|x86.Build.0 = Release|Win32
+		{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}.Debug|x64.ActiveCfg = Debug|x64
+		{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}.Debug|x64.Build.0 = Debug|x64
+		{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}.Debug|x86.ActiveCfg = Debug|Win32
+		{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}.Debug|x86.Build.0 = Debug|Win32
+		{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}.Release|x64.ActiveCfg = Release|x64
+		{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}.Release|x64.Build.0 = Release|x64
+		{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}.Release|x86.ActiveCfg = Release|Win32
+		{9F5BE2B5-ABFB-4570-A5A3-C6E5CB8B7D62}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
