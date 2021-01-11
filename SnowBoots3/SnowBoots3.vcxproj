@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bb2f58e2-46f3-4b6d-b95c-d14356a33081}</ProjectGuid>
-    <RootNamespace>SnowBoots</RootNamespace>
+    <ProjectGuid>{54876256-2472-43f9-b9a7-3ef27e4d8099}</ProjectGuid>
+    <RootNamespace>SnowBoots3</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SnowBoots.cpp" />
+    <ClCompile Include="SnowBoots3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="snowboots.in" />

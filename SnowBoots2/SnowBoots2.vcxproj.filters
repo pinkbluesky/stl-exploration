@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SnowBoots.cpp">
+    <ClCompile Include="SnowBoots2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="snowboots.out">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="snowboots.in">
-      <Filter>Source Files</Filter>
-    </None>
   </ItemGroup>
 </Project>
