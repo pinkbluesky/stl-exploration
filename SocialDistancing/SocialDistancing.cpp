@@ -1,12 +1,14 @@
+
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <iostream>
 
 /*
 * Notes: sort intervals, use greedy algorithm to check d's while binary searching d's
 */
 
-typedef unsigned long long int bigint;
+typedef unsigned long long bigint;
 
 std::ofstream fout("socdist.out");
 std::ifstream fin("socdist.in");
@@ -14,15 +16,16 @@ std::ifstream fin("socdist.in");
 int n, m;
 std::vector<std::pair<bigint, bigint>> intervals;
 
-bool test_d(int d)
+bool test_d(bigint d)
 {
-	int prev = 0;
+	bigint min_range = intervals[0].first;
+	bigint prev = min_range;
 	int prev_i = 0;
 	// for each cow
 	for (int i = 1; i < n; i++)
 	{
 		// place it in the leftmost position
-		int next = prev + d;
+		bigint next = prev + d;
 		// find the next interval 
 		int cur_i = prev_i;
 		while (cur_i < intervals.size() && next <= intervals[intervals.size() - 1].second)
@@ -63,7 +66,7 @@ int main()
 	// read input
 	for (int i = 0; i < m; i++)
 	{
-		int a, b;
+		bigint a, b;
 		fin >> a >> b;
 		intervals.push_back(std::make_pair(a, b));
 	}
@@ -72,18 +75,20 @@ int main()
 	std::sort(intervals.begin(), intervals.end());
 
 
-	int min_range = intervals[0].first;
-	int max_range = intervals[intervals.size() - 1].second;
+	bigint min_range = intervals[0].first;
+	bigint max_range = intervals[intervals.size() - 1].second;
 
-	int min_d = 1;
-	int max_d = max_range - min_range;
+	bigint temp = 1;
 
-	int res = -1;
+	bigint min_d = 1;
+	bigint max_d = max_range - min_range;
 
-	// increment d until you can't anymore
-	while (max_d > min_d)
+	bigint res = -1;
+
+	// binary search d
+	while (max_d >= min_d)
 	{
-		int mid = (max_d + min_d) / 2;
+		bigint mid = (max_d + min_d) / 2;
 		bool valid = test_d(mid);
 
 		// if d works

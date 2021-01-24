@@ -15,18 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SocialDistancing.cpp">
+    <ClCompile Include="Cereal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="socdist.in">
+    <None Include="cereal.in">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="socdist.out">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="5.in">
+    <None Include="cereal.out">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

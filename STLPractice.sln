@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnowBoots3", "SnowBoots3\Sn
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SocialDistancing", "SocialDistancing\SocialDistancing.vcxproj", "{D8A1F065-5BC4-41AE-B89D-8D4912B652CF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cereal", "Cereal\Cereal.vcxproj", "{6C59FF93-5541-4799-9240-2FFF0F854E29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -191,6 +193,14 @@ Global
 		{D8A1F065-5BC4-41AE-B89D-8D4912B652CF}.Release|x64.Build.0 = Release|x64
 		{D8A1F065-5BC4-41AE-B89D-8D4912B652CF}.Release|x86.ActiveCfg = Release|Win32
 		{D8A1F065-5BC4-41AE-B89D-8D4912B652CF}.Release|x86.Build.0 = Release|Win32
+		{6C59FF93-5541-4799-9240-2FFF0F854E29}.Debug|x64.ActiveCfg = Debug|x64
+		{6C59FF93-5541-4799-9240-2FFF0F854E29}.Debug|x64.Build.0 = Debug|x64
+		{6C59FF93-5541-4799-9240-2FFF0F854E29}.Debug|x86.ActiveCfg = Debug|Win32
+		{6C59FF93-5541-4799-9240-2FFF0F854E29}.Debug|x86.Build.0 = Debug|Win32
+		{6C59FF93-5541-4799-9240-2FFF0F854E29}.Release|x64.ActiveCfg = Release|x64
+		{6C59FF93-5541-4799-9240-2FFF0F854E29}.Release|x64.Build.0 = Release|x64
+		{6C59FF93-5541-4799-9240-2FFF0F854E29}.Release|x86.ActiveCfg = Release|Win32
+		{6C59FF93-5541-4799-9240-2FFF0F854E29}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

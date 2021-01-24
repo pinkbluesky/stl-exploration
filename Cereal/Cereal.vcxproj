@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d8a1f065-5bc4-41ae-b89d-8d4912b652cf}</ProjectGuid>
-    <RootNamespace>SocialDistancing</RootNamespace>
+    <ProjectGuid>{6c59ff93-5541-4799-9240-2fff0f854e29}</ProjectGuid>
+    <RootNamespace>Cereal</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,12 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SocialDistancing.cpp" />
+    <ClCompile Include="Cereal.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="5.in" />
-    <None Include="socdist.in" />
-    <None Include="socdist.out" />
+    <None Include="cereal.in" />
+    <None Include="cereal.out" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
