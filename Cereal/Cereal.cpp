@@ -48,45 +48,7 @@ void sol1()
 	}
 }
 
-// cereal value maps to cow id
-std::unordered_map<int, int> map;
 int answer[MAXN];
-
-// returns the number of cows that can't take cereal anymore
-int remove(int cereal)
-{
-	int res = 0;
-	// if we must rearrange
-	if (map.find(cereal) != map.end())
-	{
-
-		int affected_cow = map[cereal];
-
-		// if we need to remove a cow's first selection
-		if (cereal == c1[affected_cow])
-		{
-			if (map.find(c2[affected_cow]) == map.end())
-			{
-				map.erase(cereal);
-				map[c2[affected_cow]] = affected_cow;
-				return 0;
-			}
-			else
-			{
-				int res = remove(c2[affected_cow]);
-				map.erase(cereal);
-				// this cow is unable to take cereal
-				return res;
-			}
-			
-		}
-		else
-		{
-			res++;
-		}
-	}
-	return res;
-}
 
 // cereal box is index, maps to cow id
 int taken[MAXM];
@@ -95,104 +57,109 @@ void sol2()
 {
 	int count = 0;
 
+
 	// remove i cows and find answer
 	for (int i = n-1; i >= 0; i--)
 	{
 		int first = c1[i];
 		int second = c2[i];
 		
-		int cowj = i;
-		int cerealj = first; 
+		int j = i;
+		int cj = first;
 
 		while (1)
 		{
-			if (taken[cerealj] == 0)
+			// if cereal not taken
+			if (taken[cj] == 0)
 			{
-				// not taken
+				taken[cj] = j;
+				count++;
 				break;
-				taken[cerealj] = cowj;
 			}
-			else if (taken[cerealj] < cowj)
+			// cereal taken by earlier cow
+			else if (taken[cj] < j)
 			{
-				// cereal was taken by cow before it
-				taken[cerealj] = cowj;
+				break;
+			}
+			// cereal taken by a later cow
+			else
+			{
+				// j2 = the later cow
+				int j2 = taken[cj];
+
+				// reassign the cereal to the earlier cow
+				taken[cj] = j;
+
+				j = j2;
 				
-				// if it was the cow's first selection
+				if (cj == c2[j2])
+				{
+					break;
+				}
+				else
+				{
+					// was j2's first choice
+					cj = c2[j2];
+				}
+
 			}
 		}
-
 		/*
-
-		// adding this new cow to the sequence
-
-		// if adding this cow doesn't affect things
-		if (map.find(first) == map.end())
+		if (taken[first] != 0)
 		{
-			count++;
-			// actually add it
-			map[first] = i;
-
-			answer[i] = count;
-		}
-		else
-		{
-			// adding this cow means that some things have to be rearranged
-			
-			// the cow who has already taken that cereal
-			int cowj = map[first];
+			// cereal already taken by cowj
+			int cowj = taken[first];
 			int cerealj = first;
 
 			while (1)
 			{
-
-				if (cerealj == c1[cowj])
+				// j's first selection
+				if (c1[cowj] == cerealj)
 				{
-// test
-					cerealj = c2[cowj];
-
-					auto it = map.find(c2[cowj]);
-					// check the second option for the cow
-					if (it == map.end())
+					// check cowj's second selection
+					if (taken[c2[cowj]] == 0)
 					{
-						// second is available
-						map[c2[cowj]] = cowj;
-						// map.erase(c1[cowj]);
-						break;
-					}
-					// if the cow's second option was taken by a previous cow
-					else if (it->second < cowj)
-					{
-						// second option is taken as well
-						
-						//map.erase(c1[cowj]);
+						// second selection available
+						count++;
+						taken[c2[cowj]] = cowj;
 						break;
 					}
 					else
 					{
-						// second option taken by a later cow
-						map[cerealj] = cowj;
+						cerealj = c2[cowj];
 
-						cowj = it->second;
-						cerealj = it->first;
+						// second selection is taken
+						// by earlier cow
+						if (taken[cerealj] < cowj)
+						{
+							break;
+						}
+						// by later cow
+						else
+						{
+							taken[cowj] = cerealj;
+							cowj = taken[cerealj];
+
+						}
 					}
+
 				}
 				else
 				{
-					count--;
-					map[cerealj] = cowj;
-					
+					// j's second selection
 					break;
 				}
-
 			}
-
+		}
+		else
+		{
 			count++;
-			// actually add it
-			map[first] = i;
+		}
+		taken[first] = i;
 
-			//answer[i] = count;
-			answer[i] = map.size();
-		}*/
+		*/
+		answer[i] = count;
+
 	}
 
 	for (int i = 0; i < n; i++)
